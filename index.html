@@ -320,7 +320,7 @@
             background-color: var(--danger);
         }
 
-        /* Demonstration */
+        /* Demonstration Section */
         .demo-container {
             background-color: white;
             border-radius: 10px;
@@ -329,23 +329,34 @@
             text-align: center;
         }
 
-        .video-placeholder {
+        .video-wrapper {
+            position: relative;
             width: 100%;
             max-width: 800px;
-            height: 300px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 8px;
             margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
 
-        .video-placeholder i {
-            font-size: 4rem;
-            margin-bottom: 1rem;
+        .video-wrapper iframe {
+            width: 100%;
+            height: 450px;
+            display: block;
+            border: none;
+        }
+
+        /* For mobile responsiveness */
+        @media (max-width: 768px) {
+            .video-wrapper iframe {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .video-wrapper iframe {
+                height: 250px;
+            }
         }
 
         /* Future Work */
@@ -716,21 +727,24 @@
         </div>
     </section>
 
-   <!-- Demonstration -->
-<section class="container">
-    <h2 class="section-title">Demonstration</h2>
-    <div class="demo-container fade-in">
-        <div class="video-placeholder">
-            <i class="fas fa-play-circle"></i>
-            <h3>System Demonstration Video</h3>
-            <p>Watch on YouTube</p>
-            <a href="https://youtu.be/y7haWe6Gy7w" target="_blank" class="hero-btn" style="margin-top: 1rem;">
-                <i class="fab fa-youtube"></i> Watch Demo
-            </a>
+    <!-- Demonstration -->
+    <section class="container">
+        <h2 class="section-title">Demonstration</h2>
+        <div class="demo-container fade-in">
+            <div class="video-wrapper">
+                <!-- YouTube Video Embed -->
+                <iframe 
+                    src="https://www.youtube.com/embed/y7haWe6Gy7w" 
+                    title="Health Monitoring System Demonstration"
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p style="margin-top: 1.5rem; font-style: italic;">This video demonstrates our Health Monitoring System in action, showing real-time vital sign monitoring and the web dashboard interface.</p>
         </div>
-        <p style="margin-top: 1.5rem;"><strong>Note:</strong> Click the button above to watch the demonstration video on YouTube.</p>
-    </div>
-</section>
+    </section>
+
     <!-- Future Work -->
     <section id="future" class="container">
         <h2 class="section-title">Future Work</h2>
